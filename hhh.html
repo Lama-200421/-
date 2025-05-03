@@ -1,0 +1,239 @@
+
+<html dir="rtl">
+<head>
+  <title>مسببات الحساسية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  
+  header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #6495ED;
+  color: #00008B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height:45px;
+    margin-right: 0px;
+}
+
+.site-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-right: 5px;
+}
+
+.nav-links a {
+  color: #00008B;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 10px;
+  transition: background 0.3s;
+    margin-left: 45px;
+
+
+}
+
+.nav-links a:hover {
+  background-color: #00008B;
+  color: white;
+  border-radius: 6px;
+}
+
+	.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+}
+
+
+    .user img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            top: 50px;
+		    left: 0;
+            border-radius: 8px;   
+
+        }
+
+        .dropdown a {
+            color: #00008B; 
+            padding: 12px 16px;
+            display: block;
+			text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color:#6495ED ;
+			color: white;
+
+        }
+
+        .user:hover .dropdown{
+            display: block;
+        }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color:#6495ED ;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+  body {
+     body {
+      background-color:#F0F0F0	;
+      font-family:'Tajawal', sans-serif;
+    
+    
+    }
+
+    h1 {
+     font-size: 30px;
+      color: #6495ED;
+      font-weight: bold;
+      margin-top: 110px;
+      color:#00008B;
+	    text-align: center;
+    }
+
+    hr {
+      width: 50%;
+      border: 1px solid #6495ED;
+      margin: 20px auto;
+    }
+
+    .allergy-box {
+      background-color: #e8effc;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 560px;
+      margin: 30px auto;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    li {
+      background: #a4c0f4;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+	  text-align:right;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 200px;
+	  text-align:right;
+    }
+
+   button {
+	  width:60%;
+      padding: 12px;
+      margin: 40px auto;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color:#6495ED ;
+      color:#00008B;
+      border: none;
+      
+    }
+    button:hover {
+      background-color:#00008B;
+	  color:white;
+    }
+
+   
+    }
+  </style>
+</head>
+<body>
+
+  <h1> مسببات الحساسية</h1>
+  <hr/>
+
+  <div class="allergy-box">
+    <ul id="allergy-list">
+      <li>الحليب</li>
+      <li>البيض</li>
+    </ul>
+
+    <input type="text" id="new-ingredient" placeholder="أضف مكونًا جديدًا">
+    <button onclick="addIngredient()">إضافة</button>
+  </div>
+  <header>
+  <div class="header-left">
+    <img src="logo.png" alt="شعار" class="logo">
+    <span class="site-title">محفظة المدرسة</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#">الرئيسية</a>
+    <a href="#">إضافة الأموال</a>
+    <a href="#">التابعين</a>
+    <a href="#">مسببات الحساسة</a>
+    <a href="contact us.html">تواصل معنا</a>
+  </nav>
+
+  <div class="user">
+    <img src="user.png" alt="العميل">
+    <div class="dropdown">
+      <a href="#">إنشاء الحساب</a>
+      <a href="#">تسجيل الدخول</a>
+      <a href="#">تحديث الملف الشخصي</a>
+    </div>
+  </div>
+</header>                                              <footer>©️ 2025 جميع الحقوق محفوظة</footer>
+
+  <script>
+    function addIngredient() {
+      const input = document.getElementById('new-ingredient');
+      const ingredient = input.value.trim();
+      if (ingredient !== '') {
+        const li = document.createElement('li');
+        li.textContent = ingredient;
+        document.getElementById('allergy-list').appendChild(li);
+        input.value = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
