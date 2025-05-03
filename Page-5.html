@@ -1,0 +1,287 @@
+<html dir="rtl">
+<head>
+
+  <title>إضافة الأموال</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    body {
+      background-color:#F0F0F0	;
+      font-family:'Tajawal', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+	header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #6495ED;
+  color: #00008B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height:45px;
+    margin-right: 0px;
+}
+
+.site-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  margin-right: 5px;
+}
+
+.nav-links a {
+  color: #00008B;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 10px;
+  transition: background 0.3s;
+    margin-left: 45px;
+
+
+}
+
+.nav-links a:hover {
+  background-color: #00008B;
+  color: white;
+  border-radius: 6px;
+}
+
+	.user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+}
+
+
+    .user img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            top: 50px;
+		    left: 0;
+            border-radius: 8px;   
+
+        }
+
+        .dropdown a {
+            color: #00008B; 
+            padding: 12px 16px;
+            display: block;
+			text-decoration: none;
+        }
+
+        .dropdown a:hover {
+            background-color:#6495ED ;
+			color: white;
+
+        }
+
+        .user:hover .dropdown{
+            display: block;
+        }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color:#6495ED ;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    }
+	
+    .Box {
+      background: white;
+      border-radius: 16px;
+      width: 500px;
+      padding: 10px 30px;
+	  text-align:center;
+    }
+    .Box h2 {
+      font-size: 30px;
+      color: #6495ED;
+      font-weight: bold;
+      color:#00008B;
+	  
+    }
+   	input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #6495ED;
+	  border-radius: 8px;
+      font-size: 16px;
+	  direction: rtl;
+	 
+    }
+	 h3 {
+     font-size: 13px;
+     font-weight: bold;
+     color: black;
+     text-align:right;
+    }
+	.payment-options {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .payment-option {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center; 
+
+    }
+    .payment-option img {
+      width: 45px; 
+   
+    }
+
+    input[type="radio"] {
+     appearance: none;
+     border-radius: 50%;
+     background: white;
+	 transform: scale(0.8);
+    }
+
+    input[type="radio"]:checked {
+     background: #6495ED;
+     border-color: #6495ED;
+	 
+    }
+
+    input[type="radio"]:checked::after {
+     content: "✓";
+     color: white;
+     font-size: 12px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+    }
+    
+    button {
+	  width:60%;
+      padding: 12px;
+      margin: 30px;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color:#6495ED ;
+      color:#00008B;
+      border: none;
+      
+    }
+    button:hover {
+      background-color:#00008B;
+	  color:white;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <img src="logo.png" alt="شعار" class="logo">
+    <span class="site-title">محفظة المدرسة</span>
+  </div>
+
+  <nav class="nav-links">
+    <a href="#">الرئيسية</a>
+    <a href="#">إضافة الأموال</a>
+    <a href="#">التابعين</a>
+    <a href="#">مسببات الحساسة</a>
+    <a href="#">تواصل معنا</a>
+  </nav>
+
+  <div class="user">
+    <img src="user.png" alt="العميل">
+    <div class="dropdown">
+      <a href="#">إنشاء الحساب</a>
+      <a href="#">تسجيل الدخول</a>
+      <a href="#">تحديث الملف الشخصي</a>
+    </div>
+  </div>
+</header>                                          
+
+<div class="Box">
+  <h2>إضافة الأموال</h2>
+  
+     <h3 >أضف مبلغ إلى المحفظة</h3>
+     <input type="number" id="amount" placeholder="أدخل المبلغ بالريال">
+  
+     <h3 >اختر طريقة الدفع</h3>
+
+<div class="payment-options">
+  <label class="payment-option">
+    <input type="radio" name="paymentMethod" value="applePay">
+    <img src="Apple-Pay.png" alt="Apple Pay">
+  
+  </label>
+
+  <label class="payment-option">
+    <input type="radio" name="paymentMethod" value="mada">
+    <img src="Mada.png" alt="MADA">
+  
+  </label>
+
+  <label class="payment-option">
+    <input type="radio" name="paymentMethod" value="visa">
+    <img src="Visa.png" alt="VISA">
+    
+  </label>
+  
+</div>
+
+  
+  <button onclick="payNow()">ادفع الآن</button>
+</div>
+    <footer>©️ 2025 جميع الحقوق محفوظة</footer>
+<script>
+  function payNow() {
+  const amount = document.getElementById('amount').value;
+  const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked');
+
+  if (!amount || !selectedPayment) {
+    alert("يرجى تعبئة جميع الحقول");
+    return;
+  }
+
+
+  alert("رائع! تم شحن المحفظة بمبلغ " + amount + " ريال " );
+
+  document.getElementById('amount').value = '';
+  selectedPayment.checked = false;
+}
+
+</script>
+
+</body>
+</html>
