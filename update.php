@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<html>
+<html dir="rtl">
 <head>
 <title>profile</title>
 <style>
