@@ -2,40 +2,35 @@
 session_start();
 
 // التحقق من تسجيل الدخول
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php"); // إذا لم يكن مسجل الدخول، يتم التوجيه لصفحة تسجيل الدخول
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php"); 
     exit();
 }
 
-$user_id = $_SESSION['user_id']; // استرجاع user_id من الجلسة
+$user_id = $_SESSION['id'];
 
-// الاتصال بقاعدة البيانات
+
 $conn = new mysqli("localhost", "root", "", "school_wallet");
 
-// التحقق من الاتصال بقاعدة البيانات
 if ($conn->connect_error) {
     die("<script>alert('فشل الاتصال بقاعدة البيانات');</script>");
 }
 
-// جلب بيانات المستخدم من جدول users
 $sql = "SELECT * FROM users WHERE id = '$user_id'";
 $result = $conn->query($sql);
 
-// التحقق إذا كانت الاستعلامات جلبت بيانات
 if ($result->num_rows > 0) {
     $user = $result->fetch_assoc();
 } else {
     die("<script>alert('لا توجد بيانات للمستخدم');</script>");
 }
 
-// إذا المستخدم عدّل بياناته
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $nationalid = $_POST['nationalid'];
     $email = $_POST['email'];
 
     if ($_FILES['profile_pic']['name']) {
-        // حفظ الصورة في نفس مجلد المشروع
         $target = basename($_FILES['profile_pic']['name']);
         move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target);
         $profile_pic = $target;
