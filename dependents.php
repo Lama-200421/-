@@ -1,4 +1,33 @@
-<?php
+ <?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "school_wallet");
+
+
+if (!isset($_SESSION['id'])) {
+    die("الرجاء تسجيل الدخول أولاً.");
+}
+
+$userID = $_SESSION['id'];
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $studentName = $_POST['student_name'];
+    $birthDate = $_POST['birth_date'];
+    $schoolName = $_POST['school_name'];
+
+
+    $sql = "INSERT INTO dependents (student_name, birth_date, school_name, user_id)
+            VALUES ('$studentName', '$birthDate', '$schoolName', '$userID')";
+    $conn->query($sql);
+}
+
+
+$result = $conn->query("SELECT * FROM dependents WHERE user_id = $userID");
+?>
+
+<!DOCTYPE html>
+<html lang="ar"…
+ <?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "school_wallet");
 
@@ -251,7 +280,7 @@ $result = $conn->query("SELECT * FROM dependents WHERE user_id = $userID");
     <p>لا يوجد تابعين حتى الآن.</p>
 <?php endif; ?>
 
-<footer>© 2025 جميع الحقوق محفوظة</footer>
+<footer>©️ 2025 جميع الحقوق محفوظة</footer>
 
 </body>
 </html>
